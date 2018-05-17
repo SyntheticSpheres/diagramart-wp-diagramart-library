@@ -11,17 +11,17 @@ Version: 1.0.0
 
 define( 'WPDAL_PLUGIN', __FILE__ );
 
-function htmlCode() {
+function wpdal_html_code() {
   echo '<div id="diagramart-library"></div><script>document.addEventListener("DOMContentLoaded", function() {DiagramArtLibrary({selector:"diagramart-library"});});</script>';
 }
 
-function dal_shortcode() {
+function wpdal_shortcode() {
   ob_start();
-	htmlCode();
+	wpdal_html_code();
 	return ob_get_clean();
 }
 
-add_shortcode( 'diagramart-library', 'dal_shortcode' );
+add_shortcode( 'diagramart-library', 'wpdal_shortcode' );
 
 function wpdal_plugin_url( $path = '' ) {
 	$url = plugins_url( $path, WPDAL_PLUGIN );
