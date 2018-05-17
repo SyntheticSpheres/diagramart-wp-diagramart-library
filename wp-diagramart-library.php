@@ -23,28 +23,18 @@ function wpdal_shortcode() {
 
 add_shortcode( 'diagramart-library', 'wpdal_shortcode' );
 
-function wpdal_plugin_url( $path = '' ) {
-	$url = plugins_url( $path, WPDAL_PLUGIN );
-
-	if ( is_ssl() && 'http:' == substr( $url, 0, 5 ) ) {
-		$url = 'https:' . substr( $url, 5 );
-	}
-
-	return $url;
-}
-
 function wpdal_do_enqueue_scripts() {
 	wpdal_enqueue_scripts();
 	wpdal_enqueue_styles();
 }
 
 function wpdal_enqueue_scripts() {
-	wp_enqueue_script( 'diagramartlibrary', wpdal_plugin_url( 'includes/js/diagramart.js' ));
+  wp_enqueue_script( 'diagramartlibrary', plugins_url( 'includes/js/diagramart.js', __FILE__ ) );
 	do_action( 'wpdal_enqueue_scripts' );
 }
 
 function wpdal_enqueue_styles() {
-	wp_enqueue_style( 'diagramart-library', wpdal_plugin_url( 'includes/css/diagramart.css' ));
+  wp_enqueue_script( 'diagramartlibrary', plugins_url( 'ncludes/css/diagramart.css', __FILE__ ) );
 	do_action( 'wpdal_enqueue_styles' );
 }
 
