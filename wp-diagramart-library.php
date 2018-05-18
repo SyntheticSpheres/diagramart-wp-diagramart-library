@@ -34,7 +34,7 @@ function wpdal_enqueue_scripts() {
 }
 
 function wpdal_enqueue_styles() {
-  wp_enqueue_script( 'diagramartlibrary', plugins_url( 'ncludes/css/diagramart.css', __FILE__ ) );
+  wp_enqueue_style( 'diagramartlibrary', plugins_url( 'ncludes/css/diagramart.css', __FILE__ ) );
 	do_action( 'wpdal_enqueue_styles' );
 }
 
